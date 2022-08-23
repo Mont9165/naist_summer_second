@@ -32,6 +32,7 @@ public class CSVPrinterTest {
         Assertions.assertEquals(3, size);
         System.out.println("reafline");
     }
+
     @Test
     public void testCSVFormat() throws IOException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
