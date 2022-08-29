@@ -17,22 +17,5 @@ public class CSVPrinter {
         Iterable<CSVRecord> record = CSVFormat.DEFAULT.parse(this.reader);
         return record;
     }
-    String foundPerson(String[] people){
-        List candidates =
-                Arrays.asList(new String[] {"Don", "John", "Kent"});
-        for (int i=0; i < people.length; i++) {
-            if (candidates.contains(people[i])) {
-                return people[i];
-            }
-        }
-        return "";
-    }
-    public Iterable<CSVRecord> CSVOutput() throws IOException{
-        Iterable<CSVRecord> record = CSVFormat.DEFAULT.parse(this.reader);
-        return record;
-    }
-
-
-
 
 }
