@@ -11,9 +11,18 @@ import java.util.Arrays;
 import java.util.List;
 
 public class annotationCSVPrinterTest {
+    static CSVPrinter printer;
+
+    static {
+        try {
+            printer = new CSVPrinter("src/main/sample.csv");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @AfterAll
     public static void testReadFile() throws IOException {
-        CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         Iterable<CSVRecord> it = printer.read();
         int size = 0;
         for(CSVRecord r: it){
@@ -23,7 +32,7 @@ public class annotationCSVPrinterTest {
     }
     @AfterEach
     public void testCSVFormat() throws IOException {
-        CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
+
         Iterable<CSVRecord> it = printer.read();
         List<Integer> ansSize = new ArrayList<>(Arrays.asList(3, 5, 1));
         List<Integer> LenSize = new ArrayList<Integer>();
@@ -35,7 +44,6 @@ public class annotationCSVPrinterTest {
     }
     @BeforeAll
     public static void testCSVFileExist() throws FileNotFoundException {
-        CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
     }
     public boolean testcheck(List LenSize, List ansSize) throws IOException {
         boolean flag = false;
