@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class CSVPrinter {
-    Reader in;
+    Reader it;
     public CSVPrinter(String fileName) throws FileNotFoundException {
-        in = new FileReader(fileName);
+        it = new FileReader(fileName);
     }
     public Iterable<CSVRecord> read() throws IOException {
         Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(this.in);
