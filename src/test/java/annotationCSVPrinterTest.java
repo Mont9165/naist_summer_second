@@ -39,16 +39,16 @@ public class annotationCSVPrinterTest {
         for(CSVRecord r: it){
             LenSize.add(r.size());
         }
-        //boolean flag = testcheck(LenSize, ansSize);
+        //boolean flag = testcheck(LenSize, 3);
 
     }
     @BeforeAll
     public static void testCSVFileExist() throws FileNotFoundException {
     }
-    public boolean testcheck(List LenSize, List ansSize) throws IOException {
+    public boolean testcheck(List LenSize, int ansSize) throws IOException {
         boolean flag = false;
         for(int i = 0; i < 3; i++){
-             Assertions.assertEquals(LenSize.get(i), ansSize.get(i));
+             Assertions.assertEquals(LenSize.get(i), ansSize);
         }
         return true;
     }
