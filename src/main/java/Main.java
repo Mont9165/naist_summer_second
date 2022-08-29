@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        CSVPrinter csvPrinter = new CSVPrinter("src/main/sample.csv");
-        for (CSVRecord record : csvPrinter.read()){
+        CSVPrinter csvPrint = new CSVPrinter("src/main/sample.csv");
+        for (CSVRecord record : csvPrint.read()){
             System.out.println((record.get(0)));
         }
     }
