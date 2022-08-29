@@ -12,7 +12,8 @@ import java.util.List;
 
 public class CSVPrinterTest {
     static ArrayList<CSVRecord> it;
-    @BeforeAll
+    static int size = 0;
+    @Test
     public static void testCSVFileExist() throws IOException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         it = new ArrayList<>();
@@ -22,10 +23,9 @@ public class CSVPrinterTest {
         System.out.println("FileCheck");
     }
 
-    @AfterAll
+    @Test
     public static void testReadFile() throws IOException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
-        int size = 0;
         for(CSVRecord r: it){
             size++;
         }
@@ -38,12 +38,13 @@ public class CSVPrinterTest {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
 
         List<Integer> LenSize = new ArrayList<Integer>();
+        List<Integer> ansSize = new ArrayList<>(Arrays.asList(3, 5, 1));
         for(CSVRecord r: it){
             LenSize.add(r.size());
         }
-        Assertions.assertEquals(LenSize.get(0), 3);
-        Assertions.assertEquals(LenSize.get(1), 5);
-        Assertions.assertEquals(LenSize.get(2), 1);
+        Assertions.assertEquals(LenSize.get(0), ansSize.get(0));
+        Assertions.assertEquals(LenSize.get(1), ansSize.get(1));
+        Assertions.assertEquals(LenSize.get(2), ansSize.get(2));
         System.out.println("csvformat");
     }
 
