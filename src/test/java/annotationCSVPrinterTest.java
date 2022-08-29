@@ -30,16 +30,16 @@ public class annotationCSVPrinterTest {
         for(CSVRecord r: it){
             LenSize.add(r.size());
         }
-        testcheck(LenSize, ansSize);
+        testcheck(LenSize);
 
     }
     @BeforeAll
     public static void testCSVFileExist() throws FileNotFoundException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
     }
-    public void testcheck(List LenSize, List Ans) throws IOException {
-        Assertions.assertEquals(LenSize.get(0), Ans.get(0));
-        Assertions.assertEquals(LenSize.get(1), Ans.get(1));
-        Assertions.assertEquals(LenSize.get(2), Ans.get(2));
+    public void testcheck(List LenSize) throws IOException {
+        Assertions.assertEquals(LenSize.get(0), 3);
+        Assertions.assertEquals(LenSize.get(1), 5);
+        Assertions.assertEquals(LenSize.get(2), 1);
     }
 }
