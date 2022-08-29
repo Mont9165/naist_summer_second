@@ -12,8 +12,9 @@ public class CSVPrinter {
         reader = new FileReader(fileName);
     }
     public Iterable<CSVRecord> read() throws IOException {
-        Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(this.reader);
-        return records;
+        Iterable<CSVRecord> record = CSVFormat.DEFAULT.parse(this.reader);
+        return record;
     }
+
 
 }
