@@ -4,27 +4,27 @@ import java.io.FileNotFoundException;
 
 public class Annotation {
     @Test
-    public void testOne() throws FileNotFoundException {
+    public void One() throws FileNotFoundException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         System.out.println(1);
     }
     @BeforeAll
-    public static void testTwo() throws FileNotFoundException {
+    public static void Two() throws FileNotFoundException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         System.out.println(2);
     }
     @AfterAll
-    public static void testThree() throws FileNotFoundException {
+    public static void Three() throws FileNotFoundException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         System.out.println(3);
     }
     @BeforeEach
-    public void testFour() throws FileNotFoundException {
+    public void Four() throws FileNotFoundException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         System.out.println(4);
     }
     @AfterEach
-    public void testFive() throws FileNotFoundException {
+    public void Five() throws FileNotFoundException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         System.out.println(5);
     }
