@@ -39,7 +39,7 @@ public class annotationCSVPrinterTest {
         for(CSVRecord r: it){
             LenSize.add(r.size());
         }
-        boolean flag = testcheck(LenSize, ansSize);
+        //boolean flag = testcheck(LenSize, ansSize);
 
     }
     @BeforeAll

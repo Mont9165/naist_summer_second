@@ -12,9 +12,21 @@ import java.util.List;
 
 public class CSVPrinterTest {
     static ArrayList<CSVRecord> it;
+    static CSVPrinter printer;
+
+    static {
+        try {
+            printer = new CSVPrinter("src/main/sample.csv");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
     @Test
     public static void testCSVFileExist() throws IOException {
-        CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
+
         it = new ArrayList<>();
         for(CSVRecord r: printer.read()) {
             it.add(r);
@@ -24,7 +36,6 @@ public class CSVPrinterTest {
 
     @Test
     public static void testReadFile() throws IOException {
-        CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         int size = 0;
         for(CSVRecord r: it){
             size++;
@@ -35,8 +46,6 @@ public class CSVPrinterTest {
 
     @Test
     public void testCSVFormat() throws IOException {
-        CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
-
         List<Integer> LenSize = new ArrayList<Integer>();
         List<Integer> ansSize = new ArrayList<>(Arrays.asList(3, 5, 1));
         for(CSVRecord r: it){
