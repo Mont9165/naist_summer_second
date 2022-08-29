@@ -37,9 +37,9 @@ public class annotationCSVPrinterTest {
     public static void testCSVFileExist() throws FileNotFoundException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
     }
-    public void testcheck(List lensize, List ans) throws IOException {
-        Assertions.assertEquals(lensize.get(0), ans.get(0));
-        Assertions.assertEquals(lensize.get(1), ans.get(1));
-        Assertions.assertEquals(lensize.get(2), ans.get(2));
+    public void testcheck(List LenSize, List Ans) throws IOException {
+        Assertions.assertEquals(LenSize.get(0), Ans.get(0));
+        Assertions.assertEquals(LenSize.get(1), Ans.get(1));
+        Assertions.assertEquals(LenSize.get(2), Ans.get(2));
     }
 }
