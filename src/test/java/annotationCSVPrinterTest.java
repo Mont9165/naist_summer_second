@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class AnnotationCSVPrinterTest {
+public class annotationCSVPrinterTest {
     @AfterAll
     public static void testReadFile() throws IOException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
