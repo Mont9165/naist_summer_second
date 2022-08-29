@@ -15,6 +15,4 @@ public class CSVPrinter {
         Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(this.reader);
         return records;
     }
-
-
 }
