@@ -33,4 +33,9 @@ public class Annotation {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         System.out.println(6);
     }
+    @Test
+    public void testSeven() throws FileNotFoundException {
+        CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
+        System.out.println(7);
+    }
 }

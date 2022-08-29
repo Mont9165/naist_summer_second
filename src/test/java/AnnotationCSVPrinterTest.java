@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AnnotationCSVPrinterTest {
@@ -24,13 +25,14 @@ public class AnnotationCSVPrinterTest {
     public void testCSVFormat() throws IOException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         Iterable<CSVRecord> it = printer.read();
+        List<Integer> ansSize = new ArrayList<>(Arrays.asList(3, 5, 1));
         List<Integer> LenSize = new ArrayList<Integer>();
         for(CSVRecord r: it){
             LenSize.add(r.size());
         }
-        Assertions.assertEquals(LenSize.get(0), 3);
-        Assertions.assertEquals(LenSize.get(1), 5);
-        Assertions.assertEquals(LenSize.get(2), 1);
+        Assertions.assertEquals(LenSize.get(0), ansSize.get(0));
+        Assertions.assertEquals(LenSize.get(1), ansSize.get(1));
+        Assertions.assertEquals(LenSize.get(2), ansSize.get(2));
     }
     @BeforeAll
     public static void testCSVFileExist() throws FileNotFoundException {
