@@ -12,7 +12,6 @@ import java.util.List;
 
 public class CSVPrinterTest {
     static ArrayList<CSVRecord> it;
-    static int size = 0;
     @Test
     public static void testCSVFileExist() throws IOException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
@@ -26,6 +25,7 @@ public class CSVPrinterTest {
     @Test
     public static void testReadFile() throws IOException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
+        int size = 0;
         for(CSVRecord r: it){
             size++;
         }
