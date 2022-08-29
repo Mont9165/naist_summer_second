@@ -3,7 +3,7 @@ import org.junit.jupiter.api.*;
 import java.io.FileNotFoundException;
 
 public class Annotation {
-    @Test
+    @BeforeEach
     public void One() throws FileNotFoundException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
         System.out.println(1);
