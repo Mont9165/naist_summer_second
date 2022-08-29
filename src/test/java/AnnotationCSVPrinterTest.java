@@ -36,4 +36,7 @@ public class AnnotationCSVPrinterTest {
     public static void testCSVFileExist() throws FileNotFoundException {
         CSVPrinter printer = new CSVPrinter("src/main/sample.csv");
     }
+    public void testFree() throws IOException {
+
+    }
 }
