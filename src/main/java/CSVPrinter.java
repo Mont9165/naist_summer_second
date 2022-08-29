@@ -27,6 +27,10 @@ public class CSVPrinter {
         }
         return "";
     }
+    public Iterable<CSVRecord> CSVOutput() throws IOException{
+        Iterable<CSVRecord> record = CSVFormat.DEFAULT.parse(this.reader);
+        return record;
+    }
 
 
 
